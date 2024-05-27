@@ -44,11 +44,7 @@ Feature: Test web Automation
     @web
   Scenario: Add Product to chart
       Given open page web
-      And user click login navbar
-      Then verify user in pop login
-      And user input username "standard_user"
-      And user input password "secret_sauce"
-      And user click login
+
       And user click at item "Nexus 6"
       Then go to product page
       And user click add to cart
@@ -57,11 +53,6 @@ Feature: Test web Automation
   @web
   Scenario: Product Delete
     Given open page web
-    And user click login navbar
-    Then verify user in pop login
-    And user input username "standard_user"
-    And user input password "secret_sauce"
-    And user click login
     And user click at item "Nexus 6"
     Then go to product page
     And user click add to cart
@@ -71,11 +62,6 @@ Feature: Test web Automation
   @web
   Scenario: Checkout
     Given open page web
-    And user click login navbar
-    Then verify user in pop login
-    And user input username "standard_user"
-    And user input password "secret_sauce"
-    And user click login
     And user click at item "Nexus 6"
     Then go to product page
     And user click add to cart
@@ -104,9 +90,4 @@ Feature: Test web Automation
   @web
   Scenario: categories product
     Given open page web
-    And user click login navbar
-    Then verify user in pop login
-    And user input username "standard_user"
-    And user input password "secret_sauce"
-    And user click login
-    And click the item categories "laptop"
+    And click the item categories "Laptops"

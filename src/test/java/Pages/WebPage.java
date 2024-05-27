@@ -84,20 +84,12 @@ public class WebPage {
 
     public void laptopcategories(String category){
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        try {
-            // Wait for the element to be present
-            WebElement element1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[text()='" + category + "']")));
-            // Click on the element
-            element1.click();
-        } catch (Exception e) {
-            System.out.println("Element not found: " + e.getMessage());
-        }
 
 
+        WebElement element = driver.findElement(By.xpath("//a[@id='itemc' and contains(text(),'" + category + "')]"));
 
-//       WebElement element1= driver.findElement(By.xpath(("//a[text()='" + category + "']")));
-//       element1.click();
+        // Click on the element
+        element.click();
     }
 
 
@@ -105,16 +97,7 @@ public class WebPage {
     public void clickAtItem(String product) {
 
 
-        // Close the modal if it is present
-        try {
-            WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-            WebElement closeModalButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='logInModal']//button[@class='close']")));
-            closeModalButton.click();
-            // Wait for the modal to disappear
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("logInModal")));
-        } catch (Exception e) {
-            System.out.println("Modal not present or already closed.");
-        }
+
 
         // Construct the XPath expression with the product variable
         String xpathExpression = "//a[text()='" + product + "']";

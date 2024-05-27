@@ -104,9 +104,9 @@ public class webStep {
 
 
     @And("click the item categories {string}")
-    public void clickTheItemCategoriesLaptop(String chooseCategory) {
+    public void clickTheItemCategoriesLaptop(String category) {
 
-       webPage.laptopcategories(chooseCategory);
+       webPage.laptopcategories(category);
 
     }
 
